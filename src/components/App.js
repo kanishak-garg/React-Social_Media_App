@@ -1,8 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-
+import { BrowserRouter as Router, Routes, Link, Route } from 'react-router-dom';
 import { fetchPosts } from '../actions/posts';
-import { PostsList } from './';
+import propTypes from 'prop-types';
+import { Home, Navbar, Page404, Login } from './';
+
+const Signup = () => <div>Signup</div>;
 
 class App extends React.Component {
   componentDidMount() {
@@ -12,9 +15,17 @@ class App extends React.Component {
   render() {
     const { posts } = this.props;
     return (
-      <div>
-        <PostsList posts={posts} />
-      </div>
+      <Router>
+        <div>
+          <Navbar />
+          <Routes>
+            <Route path="/" element={<Home posts={posts} />} />
+            <Route path="/login" element={<Login />} />;
+            <Route path="/signup" element={<Signup />} />
+            <Route path="*" element={<Page404 />} />
+          </Routes>
+        </div>
+      </Router>
     );
   }
 }
@@ -24,4 +35,9 @@ function mapStateToProps(state) {
     posts: state.posts,
   };
 }
+
+App.propTypes = {
+  posts: propTypes.array.isRequired,
+};
+
 export default connect(mapStateToProps)(App);
