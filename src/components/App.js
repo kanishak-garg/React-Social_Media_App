@@ -3,9 +3,7 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Routes, Link, Route } from 'react-router-dom';
 import { fetchPosts } from '../actions/posts';
 import propTypes from 'prop-types';
-import { Home, Navbar, Page404, Login } from './';
-
-const Signup = () => <div>Signup</div>;
+import { Home, Navbar, Page404, Login, Signup } from './';
 
 class App extends React.Component {
   componentDidMount() {
