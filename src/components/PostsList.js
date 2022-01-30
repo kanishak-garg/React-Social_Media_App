@@ -12,7 +12,7 @@ class PostsList extends Component {
             <div className="post-header">
               <div className="post-avatar">
                 <img
-                  src="https://cdn-icons.flaticon.com/png/512/668/premium/668709.png?token=exp=1643365455~hmac=777655a330bd5a1a5419db151be8b48c"
+                  src="https://www.flaticon.com/free-icon/profile_3135715?term=profile&page=1&position=4&page=1&position=4&related_id=3135715"
                   alt="user-pic"
                 />
                 <div>
@@ -25,15 +25,15 @@ class PostsList extends Component {
               <div className="post-actions">
                 <div className="post-like">
                   <img
-                    src="https://cdn-icons.flaticon.com/png/512/668/premium/668709.png?token=exp=1643365455~hmac=777655a330bd5a1a5419db151be8b48c"
+                    src="https://www.flaticon.com/free-icon/profile_3135715?term=profile&page=1&position=4&page=1&position=4&related_id=3135715"
                     alt="likes-icon"
                   />
                   <span>{post.likes.length}</span>
                 </div>
-
+                s
                 <div className="post-comments-icon">
                   <img
-                    src="https://cdn-icons.flaticon.com/png/512/668/premium/668709.png?token=exp=1643365455~hmac=777655a330bd5a1a5419db151be8b48c"
+                    src="https://www.flaticon.com/free-icon/profile_3135715?term=profile&page=1&position=4&page=1&position=4&related_id=3135715"
                     alt="comments-icon"
                   />
 
