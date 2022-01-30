@@ -3,10 +3,9 @@ import { connect } from 'react-redux';
 import { BrowserRouter as Router, Routes, Link, Route } from 'react-router-dom';
 import { fetchPosts } from '../actions/posts';
 import propTypes from 'prop-types';
-import { PostsList, Navbar } from './';
+import { Home, Navbar, Page404 } from './';
 
 const Login = () => <div>Login</div>;
-const Home = () => <div>home</div>;
 const Signup = () => <div>Signup</div>;
 
 class App extends React.Component {
@@ -20,22 +19,16 @@ class App extends React.Component {
       <Router>
         <div>
           <Navbar />
-          {/* <PostsList posts={posts} /> */}
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/signup">Signup</Link>
-            </li>
-          </ul>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/" element={<Home posts={posts} />} />
+            <Route
+              path="/login"
+              render={(props) => {
+                return <Home {...props} posts={posts} />;
+              }}
+            />
             <Route path="/signup" element={<Signup />} />
+            <Route path="*" element={<Page404 />} />
           </Routes>
         </div>
       </Router>
