@@ -18,7 +18,8 @@ class App extends React.Component {
           <Navbar />
           <Routes>
             <Route path="/" element={<Home posts={posts} />} />
-            <Route path="/login" element={<Login />} />;
+            <Route path="/login" element={<Login />} />
+            ;
             <Route path="/signup" element={<Signup />} />
             <Route path="*" element={<Page404 />} />
           </Routes>

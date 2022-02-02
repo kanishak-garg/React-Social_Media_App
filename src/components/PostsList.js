@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import '../index.css';
 import propTypes from 'prop-types';
-
+import { AiOutlineUser, AiOutlineLike, AiOutlineSearch } from 'react-icons/ai';
+import { BiCommentDetail } from 'react-icons/bi';
 class PostsList extends Component {
   render() {
     const { posts } = this.props;
@@ -11,10 +12,7 @@ class PostsList extends Component {
           <div className="post-wrapper" key={post._id}>
             <div className="post-header">
               <div className="post-avatar">
-                <img
-                  src="https://www.flaticon.com/free-icon/profile_3135715?term=profile&page=1&position=4&page=1&position=4&related_id=3135715"
-                  alt="user-pic"
-                />
+                <AiOutlineUser />
                 <div>
                   <span className="post-author">{post.user.name}</span>
                   <span className="post-time">a minute ago</span>
@@ -24,18 +22,12 @@ class PostsList extends Component {
 
               <div className="post-actions">
                 <div className="post-like">
-                  <img
-                    src="https://www.flaticon.com/free-icon/profile_3135715?term=profile&page=1&position=4&page=1&position=4&related_id=3135715"
-                    alt="likes-icon"
-                  />
+                  <AiOutlineLike />
                   <span>{post.likes.length}</span>
                 </div>
                 s
                 <div className="post-comments-icon">
-                  <img
-                    src="https://www.flaticon.com/free-icon/profile_3135715?term=profile&page=1&position=4&page=1&position=4&related_id=3135715"
-                    alt="comments-icon"
-                  />
+                  <BiCommentDetail />
 
                   <span>{post.comments.length}</span>
                 </div>

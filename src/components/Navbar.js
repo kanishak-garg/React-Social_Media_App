@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { AiOutlineSearch } from 'react-icons/ai';
 
 function Navbar(props) {
   return (
@@ -13,11 +14,9 @@ function Navbar(props) {
         </Link>
       </div>
       <div className="search-container">
-        <img
-          className="search-icon"
-          src="https://image.flaticon.com/icons/svg/483/483356.svg"
-          alt="search-icon"
-        />
+        <span className="search-icon">
+          <AiOutlineSearch />
+        </span>
         <input placeholder="Search" />
 
         <div className="search-results">

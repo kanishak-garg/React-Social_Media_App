@@ -30,6 +30,7 @@ class Login extends Component {
   };
 
   render() {
+    console.log(this.props.history);
     return (
       <form className="login-form">
         <span className="login-signup-header">Log In</span>
