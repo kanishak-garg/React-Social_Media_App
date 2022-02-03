@@ -21,6 +21,7 @@ class App extends React.Component {
             <Route path="/login" element={<Login />} />
             ;
             <Route path="/signup" element={<Signup />} />
+            {/* <Route path="/logout" element={<Logout />} /> */}
             <Route path="*" element={<Page404 />} />
           </Routes>
         </div>
