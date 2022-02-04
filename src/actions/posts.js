@@ -11,8 +11,8 @@ export function fetchPosts() {
         return response.json();
       })
       .then((data) => {
-        console.log('data', data);
-        dispatch(updatePosts(data.posts));
+        // console.log('data', data.data.posts);
+        dispatch(updatePosts(data.data.posts));
       })
       .catch((err) => {
         console.log(err);

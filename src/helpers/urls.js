@@ -1,9 +1,9 @@
-const API_ROOT = 'http://localhost:8000/api/v1';
+const API_ROOT = 'http://codeial.codingninjas.com:8000/api/v2';
 
 export const APIUrls = {
-  login: () => `${API_ROOT}/users/create-session`,
+  login: () => `${API_ROOT}/users/login`,
   signup: () => `${API_ROOT}/users/signup`,
   fetchPosts: (page = 1, limit = 5) =>
     `${API_ROOT}/posts?page=${page}&limit=${limit}`,
-  logout: () => `${API_ROOT}/users/logout`,
+  logout: () => `${API_ROOT}/users/signout`,
 };

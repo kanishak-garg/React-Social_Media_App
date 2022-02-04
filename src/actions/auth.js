@@ -3,6 +3,7 @@ import {
   LOGIN_START,
   LOGIN_SUCCESS,
   LOG_OUT,
+  AUTHENTICATE_USER,
 } from './actionTypes';
 import { SIGNUP_FAILED, SIGNUP_START, SIGNUP_SUCCESS } from './actionTypes';
 import { APIUrls } from '../helpers/urls';
@@ -47,11 +48,19 @@ export function login(email, password) {
         console.log('data', data);
         if (data.success) {
           //dispatch action to save user
+          localStorage.setItem('token', data.data.token);
           dispatch(loginSuccess(data.data.user));
           return;
         }
         dispatch(loginFailed(data.message));
       });
+  };
+}
+
+export function authenticateUser(user) {
+  return {
+    type: AUTHENTICATE_USER,
+    user,
   };
 }
 
