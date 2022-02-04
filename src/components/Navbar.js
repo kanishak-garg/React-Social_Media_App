@@ -1,13 +1,13 @@
 import React, { useReducer } from 'react';
 import { Link } from 'react-router-dom';
 import { AiOutlineUser, AiOutlineSearch } from 'react-icons/ai';
-import { logout } from '../actions/auth';
+import { logoutUser } from '../actions/auth';
 import { connect } from 'react-redux';
 
 class Navbar extends React.Component {
   handleLogOutClick = () => {
-    // console.log('navbar', this.props);
-    this.props.dispatch(logout());
+    localStorage.removeItem('token');
+    this.props.dispatch(logoutUser());
   };
 
   render() {
@@ -50,21 +50,20 @@ class Navbar extends React.Component {
           )}
           <div className="nav-links">
             <ul>
-              {isLoggedIn ? (
+              {isLoggedIn && (
                 <div>
-                  <li>
-                    <button onClick={this.handleLogOutClick}>Log Out</button>
-                  </li>
+                  <li onClick={this.handleLogOutClick}>Log Out</li>
                 </div>
-              ) : (
-                <div>
-                  <li>
-                    <Link to="/login">Log in</Link>
-                  </li>
-                  <li>
-                    <Link to="/signup">Register</Link>
-                  </li>
-                </div>
+              )}
+              {!isLoggedIn && (
+                <li>
+                  <Link to="/login">Log in</Link>
+                </li>
+              )}
+              {!isLoggedIn && (
+                <li>
+                  <Link to="/signup">Register</Link>
+                </li>
               )}
             </ul>
           </div>

@@ -110,24 +110,8 @@ export function signup(name, email, password, confirm_password) {
 }
 
 //LOG OUT
-export function logoutSuccess() {
+export function logoutUser() {
   return {
     type: LOG_OUT,
-  };
-}
-
-export function logout() {
-  return (dispatch) => {
-    const url = APIUrls.logout();
-    fetch(url)
-      .then((response) => response.json())
-      .then((data) => {
-        if (data.success) {
-          localStorage.removeItem('token');
-          //dispatch action to save user
-          dispatch(logoutSuccess());
-          return;
-        }
-      });
   };
 }
